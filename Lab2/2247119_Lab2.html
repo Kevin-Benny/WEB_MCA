@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>i<3Travel.io</title>
+</head>
+
+<body bgcolor="#6CACE4" text="#000000">
+<a name="top"></a> <!--anchor to come to top of page-->
+<center>
+<h1 style="font: Times New Roman"> Your Trip Starts Here</h1>
+<h4 style="font: Arial"> Your all-in-one travel site</h4>
+</center>
+<hr>
+
+<!--audio file autoplays when webite is loaded-->
+<audio src="videoplayback.m4a" controls="controls" autoplay="true">
+</audio>
+
+<video src="pexels-taryn-elliott-6003440.mp4" width="100%" height="200" controls="controls" autoplay="true" loop></video> 
+
+<h3> Register to Explore!!</h3>
+<!--form with five input types-->
+ <form>
+<!--text inputs-->
+  <label for="fname">First name:</label><br>
+  <input type="text" id="fname" name="fname"><br>
+  <label for="lname">Last name:</label><br>
+  <input type="text" id="lname" name="lname">
+
+<br>
+<!--email input-->
+<label for="email" id="survey_q">Email ID:</label><br>
+<input type="email" name="user_email"/>
+
+<br>
+
+<p id="survey_q"> 1) How comfortable are you travelling?</p>
+<!--range input-->
+<input type="range" name="reader" min="1" max="100"/>
+<br>
+
+<p id="survey_q"> 2) How many trips do you plan in a year?</p>
+<!--number input-->
+<input type="number" name="books" min="0" max="100"/>
+<br>
+
+<p id="survey_q"> 3) When are you usally go for trip?</p>
+<!--time input-->
+<input type="time">
+<br>
+
+<p> Choose your Interest Spots:</p>
+<!--radio button inputs-->
+<input type="radio" id="Nature" name="fav_genre" value="Nature">
+<label for="adventure">Nature</label><br>
+<input type="radio" id="Beaches" name="fav_genre" value="Beaches">
+<label for="mystery">Beaches</label><br>
+<input type="radio" id="Cultural Exploration" name="fav_genre" value="Cultural Exploration">
+<label for="Cultural Exploration">Horror</label>
+
+<br>
+
+<p> Which of the following places you would like to visit? </p>
+<!--checkbox inputs-->
+<input type="checkbox" id="place1" name="place1" value="Thailand">
+<label for="place1">Thailand</label><br>
+<input type="checkbox" id="place2" name="place2" value="South Korea">
+<label for="place2">South Korea</label><br>
+<input type="checkbox" id="place3" name="place3" value="Singapore">
+<label for="place3">Singapore</label>
+
+<br><br>	
+<!--reset input-->
+<input type="reset">
+
+<br>
+<!--submit input-->
+<input type="submit" value="Submit">
+</form> 
+<br>
+<hr>
+
+<center>
+<h3> Click on a picutes for a surprise!</h3>
+<img src="3in1.jpg" alt="PicStack" usemap="#travelmap">
+
+<map name="travelmap">
+<!--image map of three stacks of books-->
+<area shape="rect" coords="10,30,150,150" href="https://www.choosemytrip.in/luxurious-singapore/">
+<area shape="rect" coords="160,20,275,85" href="https://www.etsy.com/in-en/listing/1130264138/petronas-twin-towers-photography-print">
+<area shape="rect" coords="165,100,280,170" href="http://eltoma-training.com/courses/singapore-company-incorporation-maintenance-and-liquidation/">
+</map>
+</center>
+
+
+<table border="1">
+<!--table-->
+<p style="font-family:courier">
+<tr>
+<th rowspan=3>What would you like to do?</th></tr>
+
+<tr>
+<td><img src="hotel.png" alt="hotel" width=100/></td>
+<td>Want to find a hotel?</td>
+<td><a href="https://ebooking.ctrip.com/ebkovsassembly/HotelApply?type=2&channel=2&lang=1"> Click here.</a></td></tr>
+
+<tr>
+<td><img src="place.webp" alt="Cart" height=100 width=100/></td>
+<td>Want to book a ticket to this place?</td>
+<td><a href="https://www.trip.com/hotels/bangkok-hotel-detail-703149?checkIn=2022-11-04&checkOut=2022-11-05/"> Click here.</a></td></tr>
+<tr>
+<th colspan=4>Note: These will redirect you to an external site.</th></tr>
+</table>
+<hr>
+
+<h5>These are all the external links on this page:</h5>
+<ul type=circle> <!--nested list for all webpage links-->
+
+<li> Top places to visit
+<ol type=i start=1>
+<li> Bangkok  </li>
+<li> Bali  </li>
+<li> Dubai </li></ol></li>
+
+<li> Must Visit torist places</li>
+<ul>
+	<li>New York City</li>
+	<li>Grand Canyon</li>
+</ul>
+<li> Explore More!!!! </li>
+</ul>
+
+
+
+<hr>
+<strong>Want to leave us a hand-drawn message? Do it here!</strong>
+<br>
+<!--canvas element-->
+<canvas id="myCanvas" width="200" height="100" style="border:2px solid #000000;">
+</canvas>
+
+
+<hr>
+
+<h5>Do you want to know where you are?</h5>
+<!--geolocation button-->
+<button onclick="getLocation()">Get coordinates</button>
+
+<p id="demo"></p>
+
+<br>
+Go back to top of page<br>
+<!--using anchor at top of page to go back-->
+<a href="#top">
+<img src="up_arrow.png" alt="Up Arrow" width=50/>
+</a>
+</p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+}
+</script> 
