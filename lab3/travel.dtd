@@ -1,0 +1,12 @@
+<!DOCTYPE cakeshop_customer_managament
+[
+<!ELEMENT cakeshop_customer_managament (id,fname,mname,lname,street,city,state,phone)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT fname (#PCDATA)>
+<!ELEMENT mname (#PCDATA)>
+<!ELEMENT lname (#PCDATA)>
+<!ELEMENT street (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT state (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+]>
