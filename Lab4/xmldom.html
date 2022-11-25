@@ -1,0 +1,69 @@
+<!DOCTYPE html>  
+<html>  
+<body style="border: 6px solid black; padding: 8px;">  
+
+<!--displaying contents of xml file in table format-->  
+<h1>Note</h1>  
+<div>
+<table style="border: 2px solid rgb(117, 9, 9);">
+    <tr>
+        <th>To</th>
+        <td><span id="to"></span></td>
+    </tr>
+    <tr>
+        <th>From</th>
+        <td><span id="from"></span></td>  
+    </tr> 
+    <tr>
+        <th>Message</th>
+        <td><span id="body"></span></td>
+    </tr>
+</table>
+</div>  
+<script>
+
+//using XMLHttpRequest or ActiveXObject based on broswer
+if (window.XMLHttpRequest)  
+  {// code for IE7+, Firefox, Chrome, Opera, Safari  
+  xmlhttp=new XMLHttpRequest();  
+  }  
+else  
+  {// code for IE6, IE5  
+");    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP
+  }  
+
+//checking state and status of connection
+XMLHttpRequest.status;
+XMLHttpRequest.statusText;
+
+//linking xml file
+xmlhttp.open("GET","traveladvisedetail.xml",false);  
+xmlhttp.send();  
+xmlDoc=xmlhttp.responseXML;  
+
+//deleting a block of node
+y = xmlDoc.getElementsByTagName("message")[1];
+xmlDoc.documentElement.removeChild(y);
+
+//deleting a particular element of the node
+ra = xmlDoc.getElementsByTagName("message");
+ra[0].removeAttribute("body");
+
+//changing the node value
+xmlDoc.getElementsByTagName("body")[0].childNodes[0].nodeValue = "this is beyond that"
+
+//adding a new element
+newElement = xmlDoc.createElement("date");
+xmlDoc.getElementsByTagName("message")[0].appendChild(newElement);
+
+//retrieving elements from xml file
+document.getElementById("to").innerHTML=  
+xmlDoc.getElementsByTagName("to")[0].childNodes[0].nodeValue; 
+document.getElementById("from").innerHTML=  
+xmlDoc.getElementsByTagName("from")[0].childNodes[0].nodeValue;  
+document.getElementById("body").innerHTML=  
+xmlDoc.getElementsByTagName("body")[0].childNodes[0].nodeValue;
+
+</script>  
+</body>  
+</html>

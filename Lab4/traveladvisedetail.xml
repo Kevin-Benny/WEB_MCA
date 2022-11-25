@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<note>
+
+<message>
+<to>John</to>
+<from>Travel Adviser</from>
+<body>how are you?</body>
+</message>
+
+<message>
+<to>David</to>
+<from>Travel Adviser</from>
+<body>Your travel plan is ready</body>
+</message>
+
+<message>
+<to>Haris</to>
+<from>Travel Adviser</from>
+<body>hello there</body>
+</message>
+
+</note>
