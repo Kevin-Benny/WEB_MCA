@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+<head
+      
+<!--https://htmlpreview.github.io/?https://github.com/nivgokul/WSD_Lab6/blob/main/2247147_Lab6.html-->
+    
+    <script>
+        // Save data to sessionStorage
+    sessionStorage.setItem("key", "value");
+    
+    // Get saved data from sessionStorage
+    let data = sessionStorage.getItem("key");
+    
+    // Remove saved data from sessionStorage
+    sessionStorage.removeItem("key");
+    
+    // Remove all saved data from sessionStorage
+    sessionStorage.clear();
+    
+        <!-- //adding cookie to get phone number of user
+                function WriteCookie() {
+                   if( document.myform.customer.value == "" ) {
+                      alert("Enter some value!");
+                      return;
+                   }
+                   cookievalue = escape(document.myform.customer.value) + ";";
+                   document.cookie = "p_number=" + cookievalue;
+                   document.write ("Setting Cookies : " + "p_number=" + cookievalue );
+                }
+             //-->
+    
+             <!--
+                //reading cookie that stores phone number of user
+                function ReadCookie() {
+                   var allcookies = document.cookie;
+                   document.write ("All Cookies : " + allcookies );
+                   
+                   // Get all the cookies pairs in an array
+                   cookiearray = allcookies.split(';');
+                   
+                   // Now take key value pair out of this array
+                   for(var i=0; i<cookiearray.length; i++) {
+                      p_number = cookiearray[i].split('=')[0];
+                      value = cookiearray[i].split('=')[1];
+                      document.write ("Key is : " + p_number + " and Value is : " + value);
+                   }
+                }
+             //-->
+             //setting cookie to take name of user
+    function setCookie(cname,cvalue,exdays) {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays*24*60*60*1000));
+      var expires = "expires=" + d.toGMTString();
+      document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+    }
+    
+    //getting value for name from user
+    function getCookie(cname) {
+      var name = cname + "=";
+      var decodedCookie = decodeURIComponent(document.cookie);
+      var ca = decodedCookie.split(';');
+      for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+        }
+      }
+      return "";
+    }
+    
+    //checking if name of user is already stored in cookie
+    function checkCookie() {
+      var user=getCookie("username");
+      if (user != "") {
+        alert("Welcome again " + user);
+      } else {
+         user = prompt("Please enter your name:","");
+         if (user != "" && user != null) {
+           setCookie("username", user, 30);
+         }
+      }
+    }
+    </script>
+
+<title>Find a Book</title>
+<link type="text/css" rel="stylesheet" href="style1.css" onload="checkCookie()">
+</head>
+
+<body  bgcolor="#FFB6C" text="#000000" > 
+    <form onsubmit="return false;" action="">
+    <p><select name="color_select" size="1" onchange="return setColor(this, global_name)">
+      <option style="background-color: aliceblue;" value="aliceblue">aliceblue (#F0F8FF)</option>
+      <option style="background-color: antiquewhite;" value="antiquewhite">antiquewhite (#FAEBD7)</option>
+      <option style="background-color: aqua;" value="aqua">aqua (#00FFFF)</option>
+      <option style="background-color: aquamarine;" value="aquamarine">aquamarine (#7FFFD4)</option>
+      <option style="background-color: azure;" value="azure">azure (#F0FFFF)</option>
+      <option style="background-color: beige;" value="beige">beige (#F5F5DC)</option>
+      <option style="background-color: bisque;" value="bisque">bisque (#FFE4C4)</option>
+      <option style="background-color: black; color: white;" value="black">black (#000000)</option>
+    ...snip...
+      <option style="background-color: red;" value="red">red (#FF0000)</option>
+      <option style="background-color: rosybrown;" value="rosybrown">rosybrown (#BC8F8F)</option>
+      <option style="background-color: royalblue;" value="royalblue">royalblue (#4169E1)</option>
+      <option style="background-color: saddlebrown;" value="saddlebrown">saddlebrown (#8B4513)</option>
+      <option style="background-color: salmon;" value="salmon">salmon (#FA8072)</option>
+      <option style="background-color: sandybrown;" value="sandybrown">sandybrown (#F4A460)</option>
+      <option style="background-color: seagreen;" value="seagreen">seagreen (#2E8B57)</option>
+      <option style="background-color: seashell;" value="seashell">seashell (#FFF5EE)</option>
+      <option style="background-color: sienna;" value="sienna">sienna (#A0522D)</option>
+      <option style="background-color: silver;" value="silver">silver (#C0C0C0)</option>
+      <option style="background-color: skyblue;" value="skyblue">skyblue (#87CEEB)</option>
+      <option style="background-color: slateblue;" value="slateblue">slateblue (#6A5ACD)</option>
+      <option style="background-color: slategray;" value="slategray">slategray (#708090)</option>
+      <option style="background-color: snow;" value="snow">snow (#FFFAFA)</option>
+      <option style="background-color: springgreen;" value="springgreen">springgreen (#00FF7F)</option>
+      <option style="background-color: steelblue;" value="steelblue">steelblue (#4682B4)</option>
+      <option style="background-color: tan;" value="tan">tan (#D2B48C)</option>
+      <option style="background-color: teal;" value="teal">teal (#008080)</option>
+      <option style="background-color: thistle;" value="thistle">thistle (#D8BFD8)</option>
+      <option style="background-color: tomato;" value="tomato">tomato (#FF6347)</option>
+      <option style="background-color: turquoise;" value="turquoise">turquoise (#40E0D0)</option>
+      <option style="background-color: violet;" value="violet">violet (#EE82EE)</option>
+      <option style="background-color: wheat;" value="wheat">wheat (#F5DEB3)</option>
+      <option style="background-color: white;" value="white">white (#FFFFFF)</option>
+      <option style="background-color: whitesmoke;" value="whitesmoke">whitesmoke (#F5F5F5)</option>
+      <option style="background-color: yellow;" value="yellow">yellow (#FFFF00)</option>
+      <option style="background-color: yellowgreen;" value="yellowgreen">yellowgreen (#9ACD32)</option>
+    </select>&nbsp;
+    <input type="button" value="Delete Cookie"
+     onclick="delCookie(global_name); return getColor(color_select, global_name)"></p>
+    </form>
+    
+    <script type="text/javascript">
+    <!--//
+    var global_name = 'color';
+    //
+    function getColor(sel, cookie_name) {
+        var cookie_value = getCookie(cookie_name);
+        if (!cookie_value) cookie_value = 'white';
+        document.body.style.backgroundColor = cookie_value;
+        var opt = sel.options;
+        var x, len = sel.length;
+        for (x=0; x<len; x++) {
+            if (opt[x].value == cookie_value) {
+                opt[x].selected = true;
+                break;
+            }
+        }
+        return true;
+    }
+    getColor(document.forms[0].color_select, global_name);
+    //
+    function setColor(sel, cookie_name) {
+        var opt = sel.options[sel.selectedIndex].value;
+        var oneDay = 24 * 60 * 60 * 1000;
+        var oneYear = 365 * oneDay;
+        var expDate = new Date();
+        expDate.setTime(expDate.getTime() + oneYear);
+        setCookie(cookie_name, opt, expDate);
+        return getColor(sel, cookie_name);
+    }
+    // ---------------------------------------- //
+    function getCookie(name) {
+      var arg = name + "=";
+      var alen = arg.length;
+      var clen = document.cookie.length;
+      var i = 0;
+      while (i < clen) {
+        var j = i + alen;
+        if (document.cookie.substring(i, j) == arg)
+          return getCookieVal (j);
+        i = document.cookie.indexOf(" ", i) + 1;
+        if (i == 0) break;
+      }
+      return null;
+    }
+    function getCookieVal(offset) {
+      var endstr = document.cookie.indexOf (";", offset);
+      if (endstr == -1)
+        endstr = document.cookie.length;
+      return unescape(document.cookie.substring(offset, endstr));
+    }
+    function setCookie(name, value) {
+      var argv = setCookie.arguments;
+      var argc = setCookie.arguments.length;
+      var expires = (argc > 2) ? argv[2] : null;
+      var path = (argc > 3) ? argv[3] : null;
+      var domain = (argc > 4) ? argv[4] : null;
+      var secure = (argc > 5) ? argv[5] : false;
+      document.cookie = name + "=" + escape (value) + 
+         ((expires == null) ? "" : ("; expires=" + expires.toGMTString())) + 
+         ((path == null) ? "" : ("; path=" + path)) +  
+    
+         ((domain == null) ? "" : ("; domain=" + domain)) +    
+    
+         ((secure == true) ? "; secure" : "");
+    }
+    function delCookie(name) {
+      exp = new Date();
+      exp.setTime(exp.getTime() - (24*60*60*1000));
+      var cval = getCookie(name);
+      cval = (cval == null) ? "" : cval;
+      document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
+    }
+    //-->
+    </script>
+
+    <form name = "myform" action = "">
+        Enter phone number: <input type = "number" name = "p_number"/>
+        <input type = "button" value = "Set Cookie" onclick = "WriteCookie();"/>
+     </form>
+
+     <form name = "myform" action = "">
+        <p> click the following button and see the result:</p>
+        <input type = "button" value = "Get Cookie" onclick = "ReadCookie()"/>
+     </form> 
+        <a name="top"></a> <!--anchor to come to top of page-->
+        <center>
+        <h1 style="font: Times New Roman"> Welcome to Find a Book!</h1>
+        <h4 style="font: Arial"> Answer 10 questions, get 10 recommendations.</h4>
+        </center>
+        
+        <video src="library.ogg" width="100%" height="200" controls="controls" autoplay="true" loop></video> <!--video to be played, autoplay is switched on-->
+        
+        <hr>
+        
+        <h3> Take the survey!</h3>
+        <!--form with eight input types-->
+         <form>
+        
+        <br>
+        <!--text inputs-->
+          <label for="fname" id="survey_q">First name:</label><br>
+          <input type="text" id="fname" name="fname"><br>
+          <label for="lname" id="survey_q">Last name:</label><br>
+          <input type="text" id="lname" name="lname">
+        
+        <br>
+        <!--email input-->
+        <label for="email" id="survey_q">Email ID:</label><br>
+        <input type="email" name="user_email"/>
+        
+        <br>
+        
+        <p id="survey_q"> 1) How much of a reader would you say you are?</p>
+        <!--range input-->
+        <input type="range" name="reader" min="1" max="100"/>
+        <br>
+        
+        <p id="survey_q"> 2) How many books do you read in a year?</p>
+        <!--number input-->
+        <input type="number" name="books" min="0" max="100"/>
+        <br>
+        
+        <p id="survey_q"> 3) When are you usally free to read a book?</p>
+        <!--time input-->
+        <input type="time">
+        <br>
+        
+        <p id="survey_q"> 4) Choose your favourite genre:</p>
+        <!--radio button inputs-->
+        <input type="radio" id="adventure" name="fav_genre" value="Adventure">
+        <label for="adventure">Adventure</label><br>
+        <input type="radio" id="mystery" name="fav_genre" value="Mystery">
+        <label for="mystery">Mystery</label><br>
+        <input type="radio" id="horror" name="fav_genre" value="Horror">
+        <label for="horror">Horror</label>
+        
+        <br>
+        
+        <p id="survey_q"> 5) Which of the following authors do you like? </p>
+        <!--checkbox inputs-->
+        <input type="checkbox" id="author1" name="author1" value="Jules Verne">
+        <label for="author1"> Jules Verne</label><br>
+        <input type="checkbox" id="author2" name="author2" value="Salman Rushdie">
+        <label for="author2"> Salman Rushdie</label><br>
+        <input type="checkbox" id="author3" name="author3" value="Stephen King">
+        <label for="author3"> Stephen King</label>
+        
+        <br>
+        
+        <p id="survey_q">6) Pick a colour you like.</p>
+        <!--color input-->
+        <input type="color" name="user_color"/>
+        
+        <br><br>
+        <!--reset input-->
+        <input type="reset">
+        
+        <br>
+        <!--submit input-->
+        <input type="submit" value="Submit">
+        </form> 
+        <br>
+        <hr>
+        
+        <center>
+        <h4> Click on a stack for a surprise!</h4>
+        <img src="book_stack.jpg" alt="Book Stack" usemap="#bookmap">
+        
+        <map name="bookmap">
+        <!--image map of three stacks of books-->
+        <area shape="rect" coords="10,30,150,150" alt="Adventure" href="adventure.html">
+        <area shape="rect" coords="160,20,275,85" alt="Mystery" href="mystery.html">
+        <area shape="rect" coords="165,100,280,170" alt="Horror" href="horror.html">
+        </map>
+        </center>
+        
+        <hr>
+        <strong>Want to leave us a hand-drawn message? Do it here!</strong>
+        <br>
+        <!--canvas element-->
+        <canvas id="myCanvas" width="200" height="100" style="border:2px solid #000000;">
+        </canvas>
+        
+        <hr>
+        <table border="1">
+        <!--table-->
+        <p style="font-family:courier;">
+        <tr>
+        <th rowspan=3>What would you like to do?</th></tr>
+        
+        <tr>
+        <td><img src="book.png" alt="Book" width=100/></td>
+        <td>Want to find a book?</td>
+        <td><a href="https://www.goodreads.com/"> Click here.</a></td></tr>
+        
+        <tr>
+        <td><img src="cart.png" alt="Cart" height=100 width=100/></td>
+        <td>Want to buy a book?</td>
+        <td><a href="https://www.amazon.in/"> Click here.</a></td></tr>
+        <tr>
+        <th colspan=4>Note: These will redirect you to an external site.</th></tr>
+        </table>
+        <hr>
+        
+        <h5>These are all the external links on this page:</h5>
+        <ul type=circle> <!--nested list for all webpage links-->
+        
+        <li> Book Stack
+        <ol type=i start=1>
+        <li> Adventure </li>
+        <li> Mystery </li>
+        <li> Horror </li></ol></li>
+        <li> Find a book </li>
+        <li> Buy a book </li>
+        </ul>
+        
+        <br>
+        <strong>Go back to top of page</strong><br>
+        <!--using anchor at top of page to go back-->
+        <a href="#top">
+        <img src="up_arrow.png" alt="Up Arrow" width=50/>
+        </a>
+        
+        <h5>Do you want to know where you are?</h5>
+        <!--geolocation button-->
+        <button onclick="getLocation()">Get coordinates</button>
+        
+        <p id="demo"></p>
+        
+        <script>
+        var x = document.getElementById("demo");
+        
+        function getLocation() {
+          if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+          } else { 
+            x.innerHTML = "Geolocation is not supported by this browser.";
+          }
+        }
+        
+        function showPosition(position) {
+          x.innerHTML = "Latitude: " + position.coords.latitude + 
+          "<br>Longitude: " + position.coords.longitude;
+        }
+        </script> 
+        </p>
+        </body>
+        </html>

@@ -1,0 +1,97 @@
+h1{
+color: #008000;
+background:#D8BFD8;
+border: 3px solid #008000;
+margin: 5px 5px 5px 5px;
+font-weight: bold;
+font-family: Courier New, serif;
+}
+
+h4{
+color: #006400;
+background:#D3D3D3;
+border: 2px dashed #008000;
+margin: 5px 5px 5px 5px;
+font-family: Courier New, serif;
+}
+
+h3{
+color: #006400;
+font-family: Courier New, serif;
+margin: 5px 5px 5px 5px;
+}
+
+h5{
+color: #008000;
+font-family: Courier New, serif;
+margin: 5px 5px 5px 5px;
+}
+
+body{
+background-color:#D8BFD8;
+margin: 4px 4px 4px 4px;
+border: 12px solid transparent;
+border-image: url('book_bg.webp') 30 round;
+border-image-width: 12px;
+}
+
+ul{
+color: #008000;
+font-size: 12px;
+font-family: Courier New, serif;
+align-content: space-evenly;
+margin: 5px 5px 5px 5px;
+font-weight: bold;
+}
+
+p{
+color: #008000;
+font-family: Courier New, serif;
+align-content: space-evenly;
+margin: 5px 5px 5px 5px;
+}
+
+strong{
+color: #008000;
+font-family: Courier New, serif;
+align-content: space-evenly;
+margin: 5px 5px 5px 5px;
+font-weight: bold;
+}
+
+label{
+color: #008000;
+font-family: Courier New, serif;
+align-content: space-evenly;
+margin: 5px 5px 5px 5px;
+}
+
+input{
+color: #008000;
+font-family: Courier New, serif;
+align-content: space-evenly;
+margin: 5px 5px 5px 5px;
+font-weight: bold;
+}
+
+button{
+color: #008000;
+font-family: Courier New, serif;
+align-content: space-evenly;
+margin: 5px 5px 5px 5px;
+font-weight: bold;
+}
+
+table{
+color: #008000;
+font-family: Courier New, serif;
+align-content: space-evenly;
+margin: 5px 5px 5px 5px;
+border: 2px solid black;
+font-weight: bold;
+}
+
+#survey_q {
+font-size: 15px;
+font-weight: bold;
+}

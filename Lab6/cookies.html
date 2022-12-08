@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN"
+                      "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Language" content=en-us>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Background Color selection</title>
+</head>
+
+<body>
+<form onsubmit="return false;" action="">
+<p><select name="color_select" size="1" onchange="return setColor(this, global_name)">
+  <option style="background-color: aliceblue;" value="aliceblue">aliceblue (#F0F8FF)</option>
+  <option style="background-color: antiquewhite;" value="antiquewhite">antiquewhite (#FAEBD7)</option>
+  <option style="background-color: aqua;" value="aqua">aqua (#00FFFF)</option>
+  <option style="background-color: aquamarine;" value="aquamarine">aquamarine (#7FFFD4)</option>
+  <option style="background-color: azure;" value="azure">azure (#F0FFFF)</option>
+  <option style="background-color: beige;" value="beige">beige (#F5F5DC)</option>
+  <option style="background-color: bisque;" value="bisque">bisque (#FFE4C4)</option>
+  <option style="background-color: black; color: white;" value="black">black (#000000)</option>
+...snip...
+  <option style="background-color: red;" value="red">red (#FF0000)</option>
+  <option style="background-color: rosybrown;" value="rosybrown">rosybrown (#BC8F8F)</option>
+  <option style="background-color: royalblue;" value="royalblue">royalblue (#4169E1)</option>
+  <option style="background-color: saddlebrown;" value="saddlebrown">saddlebrown (#8B4513)</option>
+  <option style="background-color: salmon;" value="salmon">salmon (#FA8072)</option>
+  <option style="background-color: sandybrown;" value="sandybrown">sandybrown (#F4A460)</option>
+  <option style="background-color: seagreen;" value="seagreen">seagreen (#2E8B57)</option>
+  <option style="background-color: seashell;" value="seashell">seashell (#FFF5EE)</option>
+  <option style="background-color: sienna;" value="sienna">sienna (#A0522D)</option>
+  <option style="background-color: silver;" value="silver">silver (#C0C0C0)</option>
+  <option style="background-color: skyblue;" value="skyblue">skyblue (#87CEEB)</option>
+  <option style="background-color: slateblue;" value="slateblue">slateblue (#6A5ACD)</option>
+  <option style="background-color: slategray;" value="slategray">slategray (#708090)</option>
+  <option style="background-color: snow;" value="snow">snow (#FFFAFA)</option>
+  <option style="background-color: springgreen;" value="springgreen">springgreen (#00FF7F)</option>
+  <option style="background-color: steelblue;" value="steelblue">steelblue (#4682B4)</option>
+  <option style="background-color: tan;" value="tan">tan (#D2B48C)</option>
+  <option style="background-color: teal;" value="teal">teal (#008080)</option>
+  <option style="background-color: thistle;" value="thistle">thistle (#D8BFD8)</option>
+  <option style="background-color: tomato;" value="tomato">tomato (#FF6347)</option>
+  <option style="background-color: turquoise;" value="turquoise">turquoise (#40E0D0)</option>
+  <option style="background-color: violet;" value="violet">violet (#EE82EE)</option>
+  <option style="background-color: wheat;" value="wheat">wheat (#F5DEB3)</option>
+  <option style="background-color: white;" value="white">white (#FFFFFF)</option>
+  <option style="background-color: whitesmoke;" value="whitesmoke">whitesmoke (#F5F5F5)</option>
+  <option style="background-color: yellow;" value="yellow">yellow (#FFFF00)</option>
+  <option style="background-color: yellowgreen;" value="yellowgreen">yellowgreen (#9ACD32)</option>
+</select>&nbsp;
+<input type="button" value="Delete Cookie"
+ onclick="delCookie(global_name); return getColor(color_select, global_name)"></p>
+</form>
+
+<script type="text/javascript">
+<!--//
+var global_name = 'color';
+//
+function getColor(sel, cookie_name) {
+    var cookie_value = getCookie(cookie_name);
+    if (!cookie_value) cookie_value = 'white';
+    document.body.style.backgroundColor = cookie_value;
+    var opt = sel.options;
+    var x, len = sel.length;
+    for (x=0; x<len; x++) {
+        if (opt[x].value == cookie_value) {
+            opt[x].selected = true;
+            break;
+        }
+    }
+    return true;
+}
+getColor(document.forms[0].color_select, global_name);
+//
+function setColor(sel, cookie_name) {
+    var opt = sel.options[sel.selectedIndex].value;
+    var oneDay = 24 * 60 * 60 * 1000;
+    var oneYear = 365 * oneDay;
+    var expDate = new Date();
+    expDate.setTime(expDate.getTime() + oneYear);
+    setCookie(cookie_name, opt, expDate);
+    return getColor(sel, cookie_name);
+}
+// ---------------------------------------- //
+function getCookie(name) {
+  var arg = name + "=";
+  var alen = arg.length;
+  var clen = document.cookie.length;
+  var i = 0;
+  while (i < clen) {
+    var j = i + alen;
+    if (document.cookie.substring(i, j) == arg)
+      return getCookieVal (j);
+    i = document.cookie.indexOf(" ", i) + 1;
+    if (i == 0) break;
+  }
+  return null;
+}
+function getCookieVal(offset) {
+  var endstr = document.cookie.indexOf (";", offset);
+  if (endstr == -1)
+    endstr = document.cookie.length;
+  return unescape(document.cookie.substring(offset, endstr));
+}
+function setCookie(name, value) {
+  var argv = setCookie.arguments;
+  var argc = setCookie.arguments.length;
+  var expires = (argc > 2) ? argv[2] : null;
+  var path = (argc > 3) ? argv[3] : null;
+  var domain = (argc > 4) ? argv[4] : null;
+  var secure = (argc > 5) ? argv[5] : false;
+  document.cookie = name + "=" + escape (value) + 
+     ((expires == null) ? "" : ("; expires=" + expires.toGMTString())) + 
+     ((path == null) ? "" : ("; path=" + path)) +  
+
+     ((domain == null) ? "" : ("; domain=" + domain)) +    
+
+     ((secure == true) ? "; secure" : "");
+}
+function delCookie(name) {
+  exp = new Date();
+  exp.setTime(exp.getTime() - (24*60*60*1000));
+  var cval = getCookie(name);
+  cval = (cval == null) ? "" : cval;
+  document.cookie = name + "=" + cval + "; expires=" + exp.toGMTString();
+}
+//-->
+</script>
+
+</body>
+</html>
