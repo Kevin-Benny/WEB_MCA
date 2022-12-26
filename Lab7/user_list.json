@@ -1,0 +1,25 @@
+{"users":[
+    {"user_id":"220001","name":"George","dob":"1995-05-23","email_id":"georged23@gmail.com",
+    "fav_book":"Looking for Alaska","genre":"Young Adult"},
+
+    {"user_id":"220002","name":"Steve","dob":"1989-10-19","email_id":"steveroger@gmail.com",
+    "fav_book":"Pride and Prejudice","genre":"Classic Fiction"},
+
+    {"user_id":"220003","name":"Abhimanyu","dob":"1999-03-14","email_id":"abhimanyu314@gmail.com",
+    "fav_book":"The Adventures of Tom Sawyer","genre":"Adventure<"},
+
+    {"user_id":"220004","name":"Abhirami","dob":"2000-05-16","email_id":"ramiabhi00@gmail.com",
+    "fav_book":"Malgudi Days","genre":"Slice of Life"},
+
+    {"user_id":"220005","name":"Devika","dob":"1998-08-17","email_id":"devikaprabhu@gmail.com",
+    "fav_book":"Good Omens","genre":"Fantasy"},
+
+    {"user_id":"220006","name":"Namrata","dob":"1983-07-24","email_id":"nammanamrata@gmail.com",
+    "fav_book":"Rebecca","genre":"Historical Drama"},
+
+    {"user_id":"220007","name":"Aishwarya","dob":"1997-02-17","email_id":"aishuprvt@gmail.com",
+    "fav_book":"The Kite Runner","genre":"Drama"},
+
+    {"user_id":"220008","name":"Manohar","dob":"2000-09-30","email_id":"manonair@gmail.com",
+    "fav_book":"Three Men in a Boat","genre":"Comedy"},
+]}
