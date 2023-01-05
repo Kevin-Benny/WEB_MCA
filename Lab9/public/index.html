@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp Form - MongoDB</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+            <div class="col-md-6 main">
+                <form action="/sign_up" method="POST">
+                    <h2>SignUp Form</h2>
+                    <div class="form-group">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="2247119" tabindex="1" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="email" class="form-label">Your Email</label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="kev@doe.com" tabindex="2" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="phone" class="form-label">Phone N0</label>
+                        <input type="tel" class="form-control" id="phno" name="phno" placeholder="phone number" tabindex="3" onfocusout="validate_phone()" required />
+
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Its a secret" tabindex="4" required />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Your Description</label>
+                        <textarea class="form-control" rows="5" cols="50" id="message" name="message" placeholder="Enter Message..." tabindex="5"></textarea>
+                    </div>
+                    <div>
+                        <input type="submit" value="Submit" id="submit" class="btn"/>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+    </div></div>
+    <script>
+        function validate_phone(){
+            var phoneNumber = document.getElementById('phone-number').value;
+            var phoneRGEX = /^\d{10}$/;
+            var phoneResult = phoneRGEX.test(phoneNumber);
+            if(!phoneResult) {
+            alert("you can only enter a 10-digit numerical string in this field.");
+            }
+        }
+    </script> 
+</body>
+
+</html>
