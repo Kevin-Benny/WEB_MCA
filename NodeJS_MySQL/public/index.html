@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<!-- mysql workbench -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAC 3 NODEJS MYSQL CONNECTIVITY</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css"  href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome/css/font-awesome.css" media="all">
+    
+    <!-- Stylesheet
+        ================================================== -->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/nivo-lightbox/nivo-lightbox.css">
+    <link rel="stylesheet" type=  "text/css" href="css/nivo-lightbox/default.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>    
+    <script src="main.js"></script>
+    
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+    <!-- Navigation
+    ==========================================-->
+    <nav id="menu" class="navbar navbar-default navbar-fixed-top">
+        <div class="container"> 
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            <a class="navbar-brand page-scroll" href="#page-top">KB</a> </div>
+          
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#about" class="page-scroll">About</a></li>
+              <li><a href="#features" class="page-scroll">Query</a></li>
+              <li><a href="#formfill" class="page-scroll">MySQL</a></li>
+              <li><a href="#header" class="page-scroll">Top</a></li>
+            </ul>
+          </div>
+          <!-- /.navbar-collapse --> 
+        </div>
+    </nav>
+      <!-- Header -->
+      <header id="header">
+        <div class="intro">
+          <div class="overlay">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8 col-md-offset-2 intro-text">
+                  <h1>DOMAIN<span></span></h1>
+                  <p>About</p>
+                  <a href="http://localhost:3307/" class="btn btn-custom btn-lg page-scroll">Let's get started with the registations</a> </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+<!-- About Section -->
+<div id="about">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-md-6"> <img src="img/Blockchain.jpeg" class="img-responsive" alt=""> </div>
+        <div class="col-xs-12 col-md-6">
+          <div class="about-text">
+            <h2>About Us</h2>
+            <p>description</p>
+            <h3>Why Choose Us?</h3>
+            <div class="list-style">
+              <div class="col-lg-6 col-sm-6 col-xs-12">
+                <ul>
+                  <li>Lorem ipsum dolor</li>
+                  <li>Tempor incididunt</li>
+                  <li>Lorem ipsum dolor</li>
+                  <li>Incididunt ut labore</li>
+                </ul>
+              </div>
+              <div class="col-lg-6 col-sm-6 col-xs-12">
+                <ul>
+                  <li>Aliquip ex ea commodo</li>
+                  <li>Lorem ipsum dolor</li>
+                  <li>Exercitation ullamco</li>
+                  <li>Lorem ipsum dolor</li>
+                </ul>
+              </div> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Features Section -->
+<div id="features" class="text-center">
+    <div class="container">
+      <div class="col-md-10 col-md-offset-1 section-title">
+        <h2>Query</h2>
+      </div>
+      <div class="row">
+         <div class="col-xs-6 col-md-3"></i>
+          <h3>Input</h3>
+          <p>To input data into the database:<a href="">INSERT</a></p>
+        </div>
+         <div class="col-xs-6 col-md-3"></i>
+          <h3>Modify</h3>
+          <p>Modify the contents in the table:<a href="">SELECT</a></p>
+        </div>
+         <div class="col-xs-6 col-md-3"></i>
+          <h3>Views</h3>
+          <p>View the items in the table:<a href="">VIEWS</a></p>
+        </div>
+          <div class="col-xs-6 col-md-3"></i>
+          <h3>Delete</h3>
+          <p>To delete a perticular entry:<a href="">DELETE</a></p>
+        </div>
+       </div>
+    </div>
+</div>
+
+<div id="formfill" class="container">
+    <form method='post' action='/submit' onsubmit="return verify()">
+        <h1>Add New entity</h1>
+
+        <div class="form-group">
+        <label for="name" class="form-label">Your Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Jane Doe" tabindex="1" required>
+        </div>
+
+        <div class="form-group">
+        <label for="email" class="form-label">Your Email</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="jane@doe.com" tabindex="2" required>
+        </div>
+
+        <div class="form-group">
+        <label for="phone" class="form-label">Your Phone No</label>
+        <input type="number" class="form-control" id="phone" name="phone" placeholder="11111111" tabindex="3" required>
+        </div>
+
+        <div class="form-group">
+        <label for="age" class="form-label">Your Age</label>
+        <input type="number" name="age" id="age" class="form-control" placeholder="21" tabindex="4" required>
+        </div>
+
+        <div class="form-group">
+        <label for="gender" class="form-label">Your Gender</label>
+        <input type="text" name="gender" id="gender" class="form-control" placeholder="M" tabindex="5" required>
+        </div>
+        <div class="form-group">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" name="password" id="password" class="form-control" placeholder="" tabindex="6" required>
+        </div>
+        <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea class="form-control" rows="5" cols="50" id="message" name="message" placeholder="Enter Message..." tabindex="7"></textarea>
+        </div>
+
+        <div>
+        <button type='submit' class="btn">Submit</button>
+        </div>
+   </form>
+   <form method='post' action='/update'>
+        <div class="form-group">
+            <h1>Update age and phone</h1>
+            <label for="name" class="form-label">Enter Name</label>
+            <input type="text" name="al_name" class="form-control"/><br>
+            Choose field to edit:
+            <select name="al_field" id="cars">
+                <option value="phone">Saab</option>
+                <option value="age">Mercedes</option>
+            </select>
+            <input type="number" name="al_value">
+            <button type='submit' class="btn">Update</button>
+        </div>
+   </form>
+   <form method='post' action='/delete'>
+    <div class="form-group">
+        <h1>Delete Record</h1>
+        <label for="name" class="form-label">Enter Name</label>
+        <input type="text" name="del_name" class="form-control">
+        <button type='submit' class="btn">Delete</button>
+    </div>
+    </form>
+    <form method='post' action='/search'>
+        <div class="form-group">
+            <h1>Search Record</h1>
+            <label for="name" class="form-label">Enter Name</label>
+            <input type="text" name="sea_name" class="form-control">
+            <button type='submit' class="btn">Click</button>
+        </div>
+    </form>
+    <form method='post' action='/display'>
+        <div class="form-group">
+            <h1>Click here to display all the records</h1>
+            <button type='submit' class="btn">Find All</button>
+        </div>
+    </form>
+</div>
+
+<!-- Footer Section -->
+<div id="footer">
+  <div class="container text-center">
+    <p>&copy; 2023 Interact. Design by <a href="" rel="nofollow">KEVIN</a></p>
+  </div>
+</div>
+</body>
+</html>

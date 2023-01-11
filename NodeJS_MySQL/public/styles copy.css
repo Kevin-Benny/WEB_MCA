@@ -1,0 +1,48 @@
+Body {
+    padding:2em; 
+    height: 700px;
+    background-image: url("1pexels-ivo-rainha-1290140.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    
+}
+#Card {
+    Position: Relative;
+    Top: 110px;
+    Width: 320px;
+    Display: Block;
+    Margin: Auto;
+    Text-Align: Center;
+    Font-Family: "Source Sans Pro", Sans-Serif;
+}
+
+#Upper-Side {
+    Padding: 2em;
+    Background-Color: #8BC34A;
+    Display: Block;
+    Color: #Fff;
+    Border-Top-Right-Radius: 8px;
+    Border-Top-Left-Radius: 8px;
+}
+#Checkmark {
+    Font-Weight: Lighter;
+    Fill: #Fff;
+    Margin: -3.5em Auto Auto 20px;
+}
+#Status {
+    Font-Weight: Lighter;
+    Text-Transform: Uppercase;
+    Letter-Spacing: 2px;
+    Font-Size: 1em;
+    Margin-Top: -0.2em;
+    Margin-Bottom: 0;
+}
+#Lower-Side {
+    Padding: 2em 2em 5em 2em;
+    Background: #Fff;
+    Display: Block;
+    Border-Bottom-Right-Radius: 8px;
+    Border-Bottom-Left-Radius: 8px;
+}
